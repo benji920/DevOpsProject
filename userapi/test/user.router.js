@@ -12,7 +12,7 @@ describe('User REST API', () => {
     // Clean DB before each test
     db.flushdb()
   })
-  
+
   after(() => {
     app.close()
     db.quit()
@@ -39,7 +39,7 @@ describe('User REST API', () => {
            throw err
         })
     })
-    
+
     it('pass wrong parameters', (done) => {
       const user = {
         firstname: 'Sergei',
@@ -61,7 +61,7 @@ describe('User REST API', () => {
   })
 
   describe('GET /user', () => {
-    
+
     it('get an existing user', (done) => {
       const user = {
         username: 'sergkudinov',
@@ -84,8 +84,8 @@ describe('User REST API', () => {
           })
       })
     })
-    
-    it('can not get a user when it does not exis', (done) => {
+
+    it('can not get a user when it does not exist', (done) => {
       chai.request(app)
         .get('/user/invalid')
         .then((res) => {

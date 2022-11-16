@@ -40,5 +40,24 @@ userRouter
       resp.status(200).json(respObj)
     })
   })
-  
+  .post('/:username/delete',(rep, resp, next) => {
+    const username = req.params.Username
+    userController.delete(username,(err,res) => {
+      let respObj
+      if(err) {
+        respObj = {
+          status: "error",
+          msg: err.message
+        }
+        return resp.status(400).json(respObj)
+      }
+      respObj = {
+        status: "success",
+        msg: res
+      }
+      resp.status(201).json(respObj)
+    })
+  })
+
+
 module.exports = userRouter

@@ -34,5 +34,16 @@ module.exports = {
       else
         callback(new Error("User doesn't exists"), null)
     })
+  },
+  delete: (username, callback) =>{
+    if(!username)
+      return callback(new Error("Username must be provided"), null)
+    db.del(username,function(err, res){
+      if (err) return callback(err, null)
+      if (res)
+        callback(null, res)
+      else
+        callback(new Error("User doesn't exists"), null)
+    })
   }
 }

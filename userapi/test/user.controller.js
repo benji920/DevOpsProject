@@ -3,7 +3,7 @@ const userController = require('../src/controllers/user')
 const db = require('../src/dbClient')
 
 describe('User', () => {
-  
+
   beforeEach(() => {
     // Clean DB before each test
     db.flushdb()
@@ -41,7 +41,7 @@ describe('User', () => {
     //   // Warning: the user already exists
     //   done()
     // })
-  
+
     it('avoid creating an existing user', (done)=> {
       const user = {
         username: 'sergkudinov',
@@ -64,7 +64,7 @@ describe('User', () => {
 
   // TODO Create test for the get method
   // describe('Get', ()=> {
-  //   
+  //
   //   it('get a user by username', (done) => {
   //     // 1. First, create a user to make this unit test independent from the others
   //     // 2. Then, check if the result of the get method is correct
@@ -100,7 +100,7 @@ describe('User', () => {
         })
       })
     })
-  
+
     it('can not get a user when it does not exist', (done) => {
       userController.get('invalid', (err, result) => {
         expect(err).to.not.be.equal(null)
@@ -108,6 +108,41 @@ describe('User', () => {
         done()
       })
     })
-  
+
   })
+
+describe('Delete', ()=> {
+
+    it('Delete an existing user', (done) => {
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      }
+      // Create a user
+      userController.create(user, () => {
+        // Get an existing user
+        userController.delete(user.username, (err, result) => {
+          expect(err).to.be.equal(null)
+          expect(result).to.be.equal(1)
+        })
+        userController.get(user.username, (err, result) => {
+          expect(err).to.not.be.equal(null)
+          expect(result).to.be.equal(null)
+          done()
+        })
+      })
+    })
+
+    it('can not delete a user when it does not exist', (done) => {
+      userController.delete('invalid', (err, result) => {
+        expect(err).to.not.be.equal(null)
+        expect(result).to.be.equal(null)
+        done()
+      })
+
+    })
+
+  })
+
 })
