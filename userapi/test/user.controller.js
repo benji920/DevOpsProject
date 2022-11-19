@@ -111,7 +111,7 @@ describe('User', () => {
 
   })
 
-describe('Delete', ()=> {
+  describe('Delete', ()=> {
 
     it('Delete an existing user', (done) => {
       const user = {
@@ -121,11 +121,12 @@ describe('Delete', ()=> {
       }
       // Create a user
       userController.create(user, () => {
-        // Get an existing user
+        // Delete existing user
         userController.delete(user.username, (err, result) => {
           expect(err).to.be.equal(null)
           expect(result).to.be.equal(1)
         })
+        // Checking if is it gone
         userController.get(user.username, (err, result) => {
           expect(err).to.not.be.equal(null)
           expect(result).to.be.equal(null)
@@ -145,4 +146,54 @@ describe('Delete', ()=> {
 
   })
 
-})
+  describe('Update', ()=>{
+
+    it('Update an existing user', (done) => {
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      }
+      // Updating the data in the set
+      /*      const user2 = {
+        username: 'sergkudinov',
+        firstname: 'Robin',
+        lastname: 'VAN DESSEL'
+      } */
+      
+      // Create a user
+      userController.create(user, () => {
+        // Updating user
+        userController.update(user.username, user, (err, result) => {
+          expect(err).to.be.equal(null)
+          expect(result).to.be.equal("OK")
+        })
+        // // Checking if is it updated
+        // userController.get(user.username, (err, result) => {
+        //   expect(err).to.be.equal(null)
+        //   expect(result).to.be.deep.equal({
+        //     firstname: 'Robin',
+        //     lastname: 'VAN DESSEL'
+         //})
+          done()
+        })
+
+      })
+
+      it('can not update a user when it does not exist', (done) => {
+        const user = {
+          username: 'invalid',
+          firstname: 'Sergei',
+          lastname: 'Kudinov'
+        }
+        userController.update(user.username,user, (err, result) => {
+          expect(err).to.not.be.equal(null)
+          expect(result).to.be.equal(null)
+          done()
+        })
+      })
+
+    })
+
+  })
+

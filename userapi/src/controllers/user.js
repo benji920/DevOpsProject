@@ -1,10 +1,11 @@
 const db = require('../dbClient')
 
 module.exports = {
+
   create: (user, callback) => {
     // Check parameters
     if(!user.username)
-      return callback(new Error("Wrong user parameters"), null)
+    return callback(new Error("Wrong user parameters"), null)
     // Create User schema
     const userObj = {
       firstname: user.firstname,
@@ -24,26 +25,58 @@ module.exports = {
       }
     })
   },
+
   get: (username, callback) => {
     if(!username)
-      return callback(new Error("Username must be provided"), null)
+    return callback(new Error("Username must be provided"), null)
     db.hgetall(username, function(err, res) {
       if (err) return callback(err, null)
       if (res)
-        callback(null, res)
+      callback(null, res)
       else
-        callback(new Error("User doesn't exists"), null)
+      callback(new Error("User doesn't exists"), null)
     })
   },
   delete: (username, callback) =>{
     if(!username)
-      return callback(new Error("Username must be provided"), null)
+    return callback(new Error("Username must be provided"), null)
     db.del(username,function(err, res){
       if (err) return callback(err, null)
       if (res)
-        callback(null, res)
+      callback(null, res)
       else
-        callback(new Error("User doesn't exists"), null)
+      callback(new Error("User doesn't exists"), null)
     })
+  },
+
+  update: (username, user, callback) =>{
+    if(!username)
+    return callback(new Error("Username must be provided"), null)
+
+    // Create User schema
+    const userObj = {
+      firstname: user.firstname,
+      lastname: user.lastname,
+    }
+    // Check if user already exists
+    db.hgetall(username, function(err, res) {
+      if (err) return callback(err, null)
+      if (res) {
+        // Save to DB
+        db.hmset(username, userObj, (err, res) => {
+          if (err) return callback(err, null)
+          callback(null, res) // Return callback
+        })
+      } else {
+        callback(new Error("User doesn't exist"), null)
+      }
+    })
+    // db.hset(username, function(err, res) {
+    //   if (err) return callback(err, null)
+    //   if (res)
+    //   callback(null, res)
+    //   else
+    //   callback(new Error("User doesn't exists"), null)
+    // })
   }
 }
