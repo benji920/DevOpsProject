@@ -16,3 +16,5 @@
 - Update user test functionality
 - Delete user API functionality
 - Delete user API test functionality
+- Update user API functionality
+- Update user API test functionality
