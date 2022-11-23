@@ -13,6 +13,35 @@ images/npmtest.png
 To create a VM with Vagrant, we created a [Vagrantfile](./iac/Vagrantfile) inside the iac folder. 
 We copied the project file into the VM using `config.vm.provision "file", source: "..", destination: "$HOME/devopsproject"` 
 
+To print a current date into the `/etc/vagrant_provisioned_at` file we replace in the `Vagrantfile` with this:
+
+```ruby
+# Start provisioning
+$script = <<-SCRIPT
+echo I am provisioning...
+date > /etc/vagrant_provisioned_at
+SCRIPT
+
+config.vm.provision "shell", inline: $script
+```
+
+Then, we run:
+
+```bash
+vagrant provision
+```
+
+We enter to the VM and read the `/etc/vagrant_provisioned_at` file content:
+
+```bash
+vagrant ssh
+# ... entering to VM
+cat /etc/vagrant_provisioned_at
+```
+We show the result below:
+![image](https://user-images.githubusercontent.com/57796628/203652239-2057ee26-7bdb-4aaf-88c8-2fb773a3dda9.png)
+
+
 ## Authors
 
 Benjamin DAVID <https://github.com/benji920>
