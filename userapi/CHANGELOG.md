@@ -18,3 +18,15 @@
 - Delete user API test functionality
 - Update user API functionality
 - Update user API test functionality
+
+## v1.3.0
+
+- Adding CI with github Actions
+
+## v1.4.0
+
+- Adding Cd with Heroku
+
+## v1.5.0
+
+- 

@@ -37,6 +37,7 @@ module.exports = {
       callback(new Error("User doesn't exists"), null)
     })
   },
+  
   delete: (username, callback) =>{
     if(!username)
     return callback(new Error("Username must be provided"), null)
