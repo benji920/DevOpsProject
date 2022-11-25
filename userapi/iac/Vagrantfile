@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     # Specify the Vagrant box to use
     server.vm.box = "centos/7"
     # Specify the VM ip address
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 70, host: 7070
     # Specify the VM specs when using the Virtualbox provisioner
     server.vm.provider "virtualbox" do |vb|
       vb.name =  "webapp.server.local"
@@ -26,12 +26,14 @@ Vagrant.configure("2") do |config|
     end
     config.vm.provider "vmware_desktop" do |vmware|
       vmware.vmx["memsize"] = "2048"
-      vmware.vmx["numvcpus"] = "1"
+      vmware.vmx["numvcpus"] = "2"
     end
     
   end
 
-  # config.vm.provision "file", source: "..", destination: "$HOME/devopsproject"
+  # config.vm.synced_folder ".", "/vagrant" , disabled: true
+
+  # config.vm.provision "file", source: "hosts", destination: "/tmp/hosts"
 
   # Use Vagrant Ansible provisioner
   config.vm.provision "ansible_local" do |ansible|
