@@ -54,6 +54,11 @@ We show the result below:
 
 ![image](https://user-images.githubusercontent.com/57796628/203654346-c97824a5-8770-4f75-b172-eb4e6f226775.png)
 
+## 4. Build Docker image of your application
+
+###1. Create a Docker image of your application
+
+![image](https://user-images.githubusercontent.com/57796628/204028231-534845b0-0428-4936-a331-f92f7ddf3cca.png)
 
 ## Authors
 
