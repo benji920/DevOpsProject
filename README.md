@@ -56,9 +56,17 @@ We show the result below:
 
 ## 4. Build Docker image of your application
 
-###1. Create a Docker image of your application
+We create a Docker image by adding a [Docker file](./Dockerfile) and running ```bash docker build -t rovandessel/devopsproject .```
 
-![image](https://user-images.githubusercontent.com/57796628/204028231-534845b0-0428-4936-a331-f92f7ddf3cca.png)
+![image](https://user-images.githubusercontent.com/57796628/204084866-7e5a6042-d7bc-49cc-ab0a-31b6029c3520.png)
+
+We run ```bash docker push rovandessel/devopsproject```
+
+![image](https://user-images.githubusercontent.com/57796628/204085128-1289cf5c-ae06-4a21-8b29-d48a140e6091.png)
+
+## 5. Make container orchestration using Docker Compose
+
+We create a [docker-compose](./docker-compose.yml) and we run ```bash docker-compose up```
 
 ## Authors
 
