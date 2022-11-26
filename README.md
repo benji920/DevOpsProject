@@ -56,17 +56,27 @@ We show the result below:
 
 ## 4. Build Docker image of your application
 
-We create a Docker image by adding a [Docker file](./Dockerfile) and running ```bash docker build -t rovandessel/devopsproject .```
+We create a Docker image by adding a [Docker file](./Dockerfile) and running ```bash
+docker build -t rovandessel/devopsproject .
+```
 
 ![image](https://user-images.githubusercontent.com/57796628/204084866-7e5a6042-d7bc-49cc-ab0a-31b6029c3520.png)
 
-We run ```bash docker push rovandessel/devopsproject```
+We run ```bash
+docker push rovandessel/devopsproject
+```
 
 ![image](https://user-images.githubusercontent.com/57796628/204085128-1289cf5c-ae06-4a21-8b29-d48a140e6091.png)
 
 ## 5. Make container orchestration using Docker Compose
 
-We create a [docker-compose](./docker-compose.yml) and we run ```bash docker-compose up```
+We create a [docker-compose](./docker-compose.yml) and we run ```bash
+docker-compose up
+```
+
+## 6. Make docker orchestration using Kubernetes
+
+We install 
 
 ## Authors
 
