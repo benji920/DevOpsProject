@@ -50,6 +50,17 @@ We show the result below:
 
 ![image](https://user-images.githubusercontent.com/57796628/203658341-b05152ff-cc65-4029-8843-d6beaa59b87c.png)
 
+* Our application can be started in the VM:
+![image](https://user-images.githubusercontent.com/53627391/207389597-dde98ebb-37ec-413b-bfa1-a47aa3f26cfb.png)
+![image](https://user-images.githubusercontent.com/53627391/207389688-5463abae-8162-47e2-975e-cbcac8948a4a.png)
+
+* To be able to use sync_folder we were needed to install the vbguest-plugin by typing theses commands :
+
+```bash
+vagrant plugin install vagrant-vbguest
+vagrant vbguest
+```
+
 * healthcheck is correctly installed :
 
 ![image](https://user-images.githubusercontent.com/57796628/203654346-c97824a5-8770-4f75-b172-eb4e6f226775.png)
