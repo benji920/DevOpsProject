@@ -86,6 +86,7 @@ We create a [docker-compose](./docker-compose.yml) and we run:
 ```bash
 docker-compose up
 ```
+If you want the docker-compose to work, you need to do it twice, for the moment this is the only way we were capable of obtain a good result.
 We obtain this:
 ![image](https://user-images.githubusercontent.com/53627391/207567768-aeaed5fa-0960-490a-bd59-10c5ac7b6f55.png)
 
