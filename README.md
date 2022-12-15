@@ -128,6 +128,29 @@ We can start the web service:
 
 ## 7. Make a service mesh using Istio
 
+We need to start minikube:
+```bash
+minikube start --memory=4000 --cpus=4 --kubernetes-version=v1.25.3 --driver=docker
+```
+
+To begin, we install Istio with the command:
+```bash
+curl -L https://istio.io/downloadIstio | sh -
+```
+After, we move to the Istio package directory, and we add the istioctl client to our path:
+```bash
+cd istio-1.16.1
+export PATH=$PWD/bin:$PATH
+```
+After, we move to the Istio package directory, and we add the istioctl client to our path:
+```bash
+istioctl install --set profile=demo -y
+```
+We add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when we deploy our application later:
+```bash
+kubectl label namespace default istio-injction=enabled
+```
+
 ## 8. Implement Monitoring to your containerized application
 
 
