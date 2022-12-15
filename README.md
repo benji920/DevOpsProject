@@ -107,7 +107,20 @@ We obtain this:
 
 ## 6. Make docker orchestration using Kubernetes
 
-We install 
+First, we install minikube with the command:
+```bash
+minikube start
+```
+After we create some pods:
+```bash
+kubectl apply -f pv.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f redis-pvc.yaml
+kubectl apply -f redis-service.yaml
+kubectl apply -f web-deployment.yaml
+kubectl apply -f web-service.yaml
+```
+
 
 ## Authors
 
