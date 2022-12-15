@@ -111,7 +111,7 @@ First, we install minikube with the command:
 ```bash
 minikube start
 ```
-After we create some pods:
+After we create some pods, services and deployments:
 ```bash
 kubectl apply -f pv.yaml
 kubectl apply -f redis-deployment.yaml
@@ -120,6 +120,15 @@ kubectl apply -f redis-service.yaml
 kubectl apply -f web-deployment.yaml
 kubectl apply -f web-service.yaml
 ```
+We check if they successfully run:
+![image](https://user-images.githubusercontent.com/53627391/207895776-827c1538-9ea7-4d82-a5dd-9a574cd512c2.png)
+
+We can start the web service:
+![image](https://user-images.githubusercontent.com/53627391/207895545-a837f193-5c61-40a2-9e4f-920dfe346903.png)
+
+## 7. Make a service mesh using Istio
+
+## 8. Implement Monitoring to your containerized application
 
 
 ## Authors
