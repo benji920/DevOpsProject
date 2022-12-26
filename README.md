@@ -128,12 +128,7 @@ We can start the web service:
 
 ## 7. Make a service mesh using Istio
 
-We need to start minikube:
-```bash
-minikube start --memory=4000 --cpus=4 --kubernetes-version=v1.25.3 --driver=docker
-```
-
-To begin, we install Istio with the command:
+To begin, we download Istio with the command:
 ```bash
 curl -L https://istio.io/downloadIstio | sh -
 ```
@@ -142,14 +137,54 @@ After, we move to the Istio package directory, and we add the istioctl client to
 cd istio-1.16.1
 export PATH=$PWD/bin:$PATH
 ```
-After, we move to the Istio package directory, and we add the istioctl client to our path:
+We need to start minikube:
+```bash
+minikube config set driver kvm2
+minikube start --memory=4000mb --cpus=4 --kubernetes-version=v1.20.2
+```
+![image](https://user-images.githubusercontent.com/53627391/209521709-f9f8c144-77ec-49f4-84d1-48dfe95bd5eb.png)
+
+In another terminal we type:
+```bash
+minikube tunnel --cleanup
+```
+![image](https://user-images.githubusercontent.com/53627391/209521499-6971596d-4b31-4170-8039-62bc2b9afdcd.png)
+
+We install istio with the demo configuration file:
 ```bash
 istioctl install --set profile=demo -y
 ```
+![image](https://user-images.githubusercontent.com/53627391/209522100-b6b24127-cbcb-4ff3-97f8-f171864bda9d.png)
+
 We add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when we deploy our application later:
 ```bash
 kubectl label namespace default istio-injction=enabled
 ```
+We go to the k8s folder and deploy our application:
+```bash
+cd k8s
+kubectl apply -f .
+```
+![image](https://user-images.githubusercontent.com/53627391/209521849-1bb16559-39eb-4566-aff7-a93800db6619.png)
+
+We set the ingress host and ports:
+```bash
+export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
+export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
+```
+
+We set GATEWAY_URL:
+```bash
+export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+```
+
+We can start now the application:
+```bash
+minikube service web
+```
+![image](https://user-images.githubusercontent.com/53627391/209522416-3178128a-51cf-472b-b832-d47ca0876ba2.png)
+![image](https://user-images.githubusercontent.com/53627391/209580462-650d2e5c-66eb-438b-9346-75b0be2512bf.png)
 
 ## 8. Implement Monitoring to your containerized application
 
