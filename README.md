@@ -1,4 +1,63 @@
-# DevOps Project
+# Instructions
+
+## Installation
+
+This application is written on NodeJS and it uses Redis database.
+
+1. [Install NodeJS](https://nodejs.org/en/download/)
+
+2. [Install Redis](https://redis.io/download)
+
+3. Install application
+
+Go to the root directory of the application (where `package.json` file located) and run:
+
+```
+npm install 
+```
+
+## Usage
+
+1. Start a web server
+
+From the root directory of the project run:
+
+```
+npm start
+```
+
+It will start a web server available in your browser at http://localhost:3000.
+
+2. Create a user
+
+Send a POST (REST protocol) request using terminal:
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
+  http://localhost:3000/user
+```
+
+It will output:
+
+```
+{"status":"success","msg":"OK"}
+```
+
+Another way to test your REST API is to use [Postman](https://www.postman.com/).
+
+
+## Testing
+
+From the root directory of the project, run:
+
+```
+npm test
+```
+
+
+# Project Report
 
 First semester project of DevOps.
 
@@ -237,8 +296,9 @@ minikube service web
 - - - -
 ## 8. Implement Monitoring to your containerized application
 
+# Links
 
-## Authors
+# Authors
 
-Benjamin DAVID <https://github.com/benji920>
-Robin VAN DESSEL <https://github.com/vdRobin>
+[Benjamin DAVID](https://github.com/benji920)
+[Robin VAN DESSEL](https://github.com/vdRobin)
