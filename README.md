@@ -5,34 +5,34 @@ First semester project of DevOps.
 ## 1. Create a web application
 The web application was developed using **NodeJS** and configured to run on port 3000. **Redis** was used as the database, and the routes and controllers folders were used to make changes to the database, such as creating a user. The application was covered with 20 tests to ensure its proper functioning, including tests for configuration, the Redis connection, and the user CRUD methods as well as the REST API. This testing strategy helps to ensure that the different components of the application are working correctly and that the API is able to handle expected requests and responses.
 - The little user API application with CRUD:
-  - Create:
-<p align="center" width="100%">
-    <img width="66%" src="https://user-images.githubusercontent.com/53627391/209705485-bd3e7ef8-9b8d-4f12-afee-7d30c2db93ab.png"> 
-</p>
-  - Read:
-<p align="center" width="100%">
-    <img width="66%" src="https://user-images.githubusercontent.com/53627391/209705912-25ff801a-7c40-426b-8b7b-67b96d512d7d.png"> 
-</p>
-  - Update:
-  
+
+Create:
+ 
+![image](https://user-images.githubusercontent.com/53627391/209705485-bd3e7ef8-9b8d-4f12-afee-7d30c2db93ab.png)
+
+Read:
+
+![image](https://user-images.githubusercontent.com/53627391/209705912-25ff801a-7c40-426b-8b7b-67b96d512d7d.png)
+
+Update:
+
 ![image](https://user-images.githubusercontent.com/53627391/209706279-959d51d4-8e02-4622-a149-da15bacd0af9.png)
 
 ![image](https://user-images.githubusercontent.com/53627391/209706303-a88dca1f-2297-41c4-b563-db128e292f7c.png)
 
-   - Delete:
-  
+Delete:
+
 ![image](https://user-images.githubusercontent.com/53627391/209706494-49252f4c-c42d-4049-ac11-17d880aa8c3e.png)
 
 ![image](https://user-images.githubusercontent.com/53627391/209706530-36d7fb7b-46cc-49d3-877f-ffa7925048b7.png)
 
-
 - The storage in Redis database:
-- All tests: unit, API, configuration, connection:
 
+![image](https://user-images.githubusercontent.com/53627391/209721976-e97d3066-bd16-4e7a-a4cf-0149bf52de80.png)
+
+- All tests: unit, API, configuration, connection & the health check endpoint ensuring an application is functional:
 
 ![image](images/npmtest.png)
-
-- The health check endpoint ensuring an application is functional:
 
 - - - -
 
