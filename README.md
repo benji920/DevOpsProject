@@ -298,6 +298,20 @@ minikube service web
 
 # Links
 
+- [Node.js](https://nodejs.org/en/)
+- [Github Action](https://github.com/features/actions)
+- [Heroku](heroku.com)
+- [Istio](https://istio.io/)
+  - [Kiali](https://kiali.io/)
+  - [Prometheus](https://istio.io/latest/docs/ops/integrations/prometheus/)
+- [Docker](https://www.docker.com/)
+- [Vagrant](https://www.vagrantup.com/)
+  - [Ansible](https://www.ansible.com/)
+- [Kubernetes](https://kubernetes.io/)
+- [Postman](https://www.postman.com/)
+- [Docker Hub](https://hub.docker.com/)
+
+
 # Authors
 
 [Benjamin DAVID](https://github.com/benji920)
