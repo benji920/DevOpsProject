@@ -310,6 +310,7 @@ minikube service web
 - [Kubernetes](https://kubernetes.io/)
 - [Postman](https://www.postman.com/)
 - [Docker Hub](https://hub.docker.com/)
+- [Minikube](https://minikube.sigs.k8s.io/docs/)
 
 
 # Authors
