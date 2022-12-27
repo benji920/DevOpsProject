@@ -5,14 +5,39 @@ First semester project of DevOps.
 ## 1. Create a web application
 The web application was developed using **NodeJS** and configured to run on port 3000. **Redis** was used as the database, and the routes and controllers folders were used to make changes to the database, such as creating a user. The application was covered with 20 tests to ensure its proper functioning, including tests for configuration, the Redis connection, and the user CRUD methods as well as the REST API. This testing strategy helps to ensure that the different components of the application are working correctly and that the API is able to handle expected requests and responses.
 - The little user API application with CRUD:
+  - Create:
+<p align="center" width="100%">
+    <img width="66%" src="https://user-images.githubusercontent.com/53627391/209705485-bd3e7ef8-9b8d-4f12-afee-7d30c2db93ab.png"> 
+</p>
+  - Read:
+<p align="center" width="100%">
+    <img width="66%" src="https://user-images.githubusercontent.com/53627391/209705912-25ff801a-7c40-426b-8b7b-67b96d512d7d.png"> 
+</p>
+  - Update:
+  
+![image](https://user-images.githubusercontent.com/53627391/209706279-959d51d4-8e02-4622-a149-da15bacd0af9.png)
+
+![image](https://user-images.githubusercontent.com/53627391/209706303-a88dca1f-2297-41c4-b563-db128e292f7c.png)
+
+   - Delete:
+  
+![image](https://user-images.githubusercontent.com/53627391/209706494-49252f4c-c42d-4049-ac11-17d880aa8c3e.png)
+
+![image](https://user-images.githubusercontent.com/53627391/209706530-36d7fb7b-46cc-49d3-877f-ffa7925048b7.png)
+
+
 - The storage in Redis database:
 - All tests: unit, API, configuration, connection:
+
 
 ![image](images/npmtest.png)
 
 - The health check endpoint ensuring an application is functional:
 
+- - - -
+
 ## 2. Apply CI/CD pipeline
+- - - -
 
 ## 3. Configure and provision a virtual environment and run your application using the IaC approach
 
@@ -69,7 +94,7 @@ vagrant vbguest
 * healthcheck is correctly installed :
 
 ![image](https://user-images.githubusercontent.com/57796628/203654346-c97824a5-8770-4f75-b172-eb4e6f226775.png)
-
+- - - -
 ## 4. Build Docker image of your application
 
 We create a Docker image by adding a [Docker file](./Dockerfile) and running:
@@ -110,7 +135,7 @@ docker exec devopsproject_redis_1  sh -c "redis-cli ping"
 We obtain this:
 ![image](https://user-images.githubusercontent.com/53627391/207570151-e637f9ae-1cba-45c3-a0b8-b80dcfeb1b87.png)
 
-
+- - - -
 ## 6. Make docker orchestration using Kubernetes
 
 First, we install minikube with the command:
@@ -131,7 +156,7 @@ We check if they successfully run:
 
 We can start the web service:
 ![image](https://user-images.githubusercontent.com/53627391/207895545-a837f193-5c61-40a2-9e4f-920dfe346903.png)
-
+- - - -
 ## 7. Make a service mesh using Istio
 
 To begin, we download Istio with the command:
@@ -191,7 +216,7 @@ minikube service web
 ```
 ![image](https://user-images.githubusercontent.com/53627391/209522416-3178128a-51cf-472b-b832-d47ca0876ba2.png)
 ![image](https://user-images.githubusercontent.com/53627391/209580462-650d2e5c-66eb-438b-9346-75b0be2512bf.png)
-
+- - - -
 ## 8. Implement Monitoring to your containerized application
 
 
