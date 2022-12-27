@@ -3,9 +3,15 @@
 First semester project of DevOps.
 
 ## 1. Create a web application
-We use the web application from Labs, we must add update and delete in the web app.
-We also need to add tests on update and delete.
-images/npmtest.png
+The web application was developed using **NodeJS** and configured to run on port 3000. **Redis** was used as the database, and the routes and controllers folders were used to make changes to the database, such as creating a user. The application was covered with 20 tests to ensure its proper functioning, including tests for configuration, the Redis connection, and the user CRUD methods as well as the REST API. This testing strategy helps to ensure that the different components of the application are working correctly and that the API is able to handle expected requests and responses.
+- The little user API application with CRUD:
+- The storage in Redis database:
+- All tests: unit, API, configuration, connection:
+
+![image](images/npmtest.png)
+
+- The health check endpoint ensuring an application is functional:
+
 ## 2. Apply CI/CD pipeline
 
 ## 3. Configure and provision a virtual environment and run your application using the IaC approach
