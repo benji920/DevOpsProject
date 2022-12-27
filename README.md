@@ -37,6 +37,24 @@ Delete:
 - - - -
 
 ## 2. Apply CI/CD pipeline
+
+For applying CI/CD, we use a configuration file named [main.yaml](./github/workflows/main.yaml)
+
+### Continuous Integration
+First, we applied continuous integration using GitHub Actions:
+
+![image](https://user-images.githubusercontent.com/53627391/209723215-92ce271a-1018-4d76-804d-8fb000ff961a.png)
+
+![image](https://user-images.githubusercontent.com/53627391/209722866-7b7e3319-31fd-460e-bda6-b59d2b1584f5.png)
+
+### Continuous Deployments
+Second, we applied continuous deployments using Heroku:
+
+![image](https://user-images.githubusercontent.com/53627391/209723844-3ffb19f1-ffe4-4cd2-8b35-343069f58214.png)
+
+![image](https://user-images.githubusercontent.com/53627391/209723861-0247f465-200b-4d95-8a4a-4688c757547d.png)
+
+
 - - - -
 
 ## 3. Configure and provision a virtual environment and run your application using the IaC approach
