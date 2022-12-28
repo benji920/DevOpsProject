@@ -188,6 +188,11 @@ docker push rovandessel/devopsproject
 
 ![image](https://user-images.githubusercontent.com/57796628/204085128-1289cf5c-ae06-4a21-8b29-d48a140e6091.png)
 
+Here is the docker image in docker hub:
+
+![image](https://user-images.githubusercontent.com/53627391/209788901-68275637-11ca-4479-9f00-c89d02b00497.png)
+
+
 ## 5. Make container orchestration using Docker Compose
 
 We create a [docker-compose](./docker-compose.yml) and we run:
