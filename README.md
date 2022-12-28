@@ -302,6 +302,9 @@ minikube service web
 ```
 ![image](https://user-images.githubusercontent.com/53627391/209522416-3178128a-51cf-472b-b832-d47ca0876ba2.png)
 ![image](https://user-images.githubusercontent.com/53627391/209580462-650d2e5c-66eb-438b-9346-75b0be2512bf.png)
+
+![image](https://user-images.githubusercontent.com/53627391/209840720-96ed47f9-40ce-43a6-846e-a30f32895970.png)
+
 - - - -
 ## 8. Implement Monitoring to your containerized application
 
