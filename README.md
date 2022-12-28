@@ -220,6 +220,8 @@ We obtain this:
 - - - -
 ## 6. Make docker orchestration using Kubernetes
 
+To install minikube you can follow this [link](https://minikube.sigs.k8s.io/docs/start/)
+
 First, we install minikube with the command:
 ```bash
 minikube start
@@ -240,6 +242,8 @@ We can start the web service:
 ![image](https://user-images.githubusercontent.com/53627391/207895545-a837f193-5c61-40a2-9e4f-920dfe346903.png)
 - - - -
 ## 7. Make a service mesh using Istio
+
+We use kvm2 with minikube for Istio, to install it follow instructions with this [link](https://phoenixnap.com/kb/ubuntu-install-kvm)
 
 To begin, we download Istio with the command:
 ```bash
